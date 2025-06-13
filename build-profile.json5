@@ -1,0 +1,56 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\h1007\\.ohos\\config\\default_BleShare_E8VB-FWnIrqzKV89QfY4zI9FtWmSFBTyWOYZ8W0gnLk=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "000000196F56B49DABD1CC25D4DB8769DD1B0BAD1047113AE8CBED292D68328237C122F2142D27CEF5",
+          "profile": "C:\\Users\\h1007\\.ohos\\config\\default_BleShare_E8VB-FWnIrqzKV89QfY4zI9FtWmSFBTyWOYZ8W0gnLk=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\h1007\\.ohos\\config\\default_BleShare_E8VB-FWnIrqzKV89QfY4zI9FtWmSFBTyWOYZ8W0gnLk=.p12",
+          "storePassword": "0000001987B42EF6E4E81623A8E25EB556F9680F1D4FBE6F9FAEA7FAE564F96EFB56E51BBCBB6EFB8A"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "targetSdkVersion": "5.0.5(17)",
+        "compatibleSdkVersion": "5.0.5(17)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

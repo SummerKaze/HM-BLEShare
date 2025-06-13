@@ -1,0 +1,20 @@
+{
+  "routerMap": [
+    {
+      "name": "clientComp",
+      "pageSourceFile": "src/main/ets/pages/clientComp.ets",
+      "buildFunction": "clientCompBuilder",
+      "data": {
+        "description" : "this is clientComp"
+      }
+    },
+    {
+      "name": "serveComp",
+      "pageSourceFile": "src/main/ets/pages/serveComp.ets",
+      "buildFunction": "serveCompBuilder",
+      "data": {
+        "description" : "this is serveComp"
+      }
+    }
+  ]
+}
