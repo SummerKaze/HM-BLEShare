@@ -50,27 +50,22 @@ export struct serveComp {
    */
   @Consumer()
   navPathStack: NavPathStack = new NavPathStack()
-
   /**
    * 服务状态
    */
   @Local isServerRunning: boolean = false
-
   /**
    * 可发现状态
    */
   @Local isDiscoverable: boolean = false
-
   /**
    * 连接的客户端列表
    */
   @Local connectedClients: ConnectedClient[] = []
-
   /**
    * 传输记录列表
    */
   @Local transferRecords: FileTransferRecord[] = []
-
   /**
    * 服务状态描述
    */
@@ -147,12 +142,17 @@ export struct serveComp {
           Row({ space: 8 }) {
             Circle({ width: 8, height: 8 })
               .fill(this.isServerRunning ? $r('app.color.success_color') : $r('app.color.error_color'))
-            
+
             Text(this.serverStatus)
               .fontSize(14)
               .fontColor($r('app.color.subtitle_color'))
           }
-          .padding({ left: 12, right: 12, top: 8, bottom: 8 })
+          .padding({
+            left: 12,
+            right: 12,
+            top: 8,
+            bottom: 8
+          })
           .backgroundColor($r('app.color.status_background'))
           .borderRadius(16)
         }
@@ -224,10 +224,16 @@ export struct serveComp {
 
                       Text(record.status === 'completed' ? '成功' : '失败')
                         .fontSize(12)
-                        .fontColor(record.status === 'completed' ? $r('app.color.success_color') : $r('app.color.error_color'))
+                        .fontColor(record.status === 'completed' ? $r('app.color.success_color') :
+                        $r('app.color.error_color'))
                     }
                     .width('100%')
-                    .padding({ left: 12, right: 12, top: 8, bottom: 8 })
+                    .padding({
+                      left: 12,
+                      right: 12,
+                      top: 8,
+                      bottom: 8
+                    })
                     .backgroundColor($r('app.color.card_background'))
                     .borderRadius(8)
                   }
@@ -251,7 +257,12 @@ export struct serveComp {
           .fontColor($r('app.color.hint_color'))
           .opacity(0.6)
           .textAlign(TextAlign.Center)
-          .padding({ left: 20, right: 20, top: 12, bottom: 16 })
+          .padding({
+            left: 20,
+            right: 20,
+            top: 12,
+            bottom: 16
+          })
       }
       .width('100%')
       .height('100%')

@@ -45,7 +45,14 @@
             "name": "ohos.extension.backup",
             "resource": "$profile:backup_config"
           }
-        ],
+        ]
+      }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.ACCESS_BLUETOOTH",
+        "usedScene": {},
+        "reason": "$string:permission_reason"
       }
     ]
   }

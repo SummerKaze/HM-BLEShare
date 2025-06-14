@@ -10,6 +10,10 @@
 import { clientCompBuilder } from './clientComp'
 import { serveCompBuilder } from './serveComp'
 import { RouteConstants, NavigationUtils } from '../common/RouteConstants'
+import abilityAccessCtrl, { Permissions } from '@ohos.abilityAccessCtrl'
+import promptAction from '@ohos.promptAction'
+import router from '@ohos.router'
+import { Permission } from '../utils/Permission.ets'
 
 /**
  * 应用主入口页面
@@ -23,6 +27,47 @@ struct Index {
    */
   @Provider()
   navPathStack: NavPathStack = new NavPathStack()
+  // 权限列表 
+  private permissionList: Array<Permissions> = [
+    "ohos.permission.ACCESS_BLUETOOTH"
+  ]
+  // 弹窗配置
+  confirmConfig: promptAction.ShowDialogOptions = {
+    title: "温馨提示",
+    message: "蓝牙权限未授予，请先申请权限",
+    buttons: [
+      { text: '离开', color: "#333" },
+      { text: '去授权', color: "#6cf" }
+    ]
+  }
+
+  aboutToAppear() {
+    this.getPermission()
+  }
+
+  // 获取权限
+  async getPermission() {
+    try {
+      // 第一请求授权
+      const isOk = await Permission.requestPermission(this.permissionList)
+      if (isOk) {
+        return
+      }
+      // 未授权弹窗提示
+      const confirm = await promptAction.showDialog(this.confirmConfig)
+      if (confirm.index === 1) {
+        // 第二次请求权限
+        const isOk2 = await Permission.openPermissionSetting(this.permissionList)
+        if (isOk2) {
+          return
+        }
+      }
+      router.back()
+    } catch (e) {
+      promptAction.showToast({ message: '未授权' })
+      router.back()
+    }
+  }
 
   /**
    * 根据路由名称构建对应的页面组件

@@ -7,11 +7,11 @@
         "material": {
           "certpath": "C:\\Users\\h1007\\.ohos\\config\\default_BleShare_E8VB-FWnIrqzKV89QfY4zI9FtWmSFBTyWOYZ8W0gnLk=.cer",
           "keyAlias": "debugKey",
-          "keyPassword": "000000196F56B49DABD1CC25D4DB8769DD1B0BAD1047113AE8CBED292D68328237C122F2142D27CEF5",
+          "keyPassword": "0000001AC8406D45000BE954543B30C2985020750FD867A01260815B762E326B2C29E59E48CCFF4C75B1",
           "profile": "C:\\Users\\h1007\\.ohos\\config\\default_BleShare_E8VB-FWnIrqzKV89QfY4zI9FtWmSFBTyWOYZ8W0gnLk=.p7b",
           "signAlg": "SHA256withECDSA",
           "storeFile": "C:\\Users\\h1007\\.ohos\\config\\default_BleShare_E8VB-FWnIrqzKV89QfY4zI9FtWmSFBTyWOYZ8W0gnLk=.p12",
-          "storePassword": "0000001987B42EF6E4E81623A8E25EB556F9680F1D4FBE6F9FAEA7FAE564F96EFB56E51BBCBB6EFB8A"
+          "storePassword": "0000001A7A06C9612388CDD9F66027DEB7FE2810ECD5B936F1948D2D604EB5CD2F9250CE4516DB594ED2"
         }
       }
     ],
